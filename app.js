@@ -20,6 +20,9 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var sass = require('node-sass-middleware');
+var React = require('react');
+var JSX = require('node-jsx').install({extension: '.jsx'});
+var Hello = require('./components/Hello.react.jsx');
 
 
 /**

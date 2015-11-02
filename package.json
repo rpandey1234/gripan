@@ -41,6 +41,7 @@
     "mongoose": "^4.2.3",
     "morgan": "^1.6.1",
     "node-foursquare": "^0.3.0",
+    "node-jsx": "^0.13.3",
     "node-linkedin": "^0.5.1",
     "node-sass-middleware": "^0.9.7",
     "nodemailer": "^1.8.0",

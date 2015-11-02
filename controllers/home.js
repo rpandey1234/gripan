@@ -1,3 +1,6 @@
+React = require('react');
+Hello = require('../components/Hello.react');
+
 /**
  * GET /
  * Home page.
