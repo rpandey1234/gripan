@@ -7,9 +7,11 @@ var User = require('../models/User');
 var secrets = require('../config/secrets');
 
 exports.getAll = function(req, res) {
+  console.log('db request for users');
   User.find({}, function(err, users) {
-    if (err) return next(err);
-    return users;
+    if (err) return null;
+    console.log(users);
+    res.send(users);
   });
 };
 

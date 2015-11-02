@@ -5,15 +5,18 @@ ReactDOM = require('react-dom');
 
 module.exports = Hello = React.createClass({displayName: "Hello",
 
+    getInitialState: function() {
+        return {
+            users: []
+        };
+    },
+
     componentDidMount: function() {
         console.log('component mounted');
         $.get('/api/users', function(result) {
             console.log(result);
             if (this.isMounted()) {
-                this.setState({
-                    //username: lastGist.owner.login,
-                    //lastGistUrl: lastGist.html_url
-                });
+                this.setState({users: result});
             }
         }.bind(this));
     },
@@ -21,10 +24,12 @@ module.exports = Hello = React.createClass({displayName: "Hello",
     // Render the component
     render: function(){
         console.log('rendering');
-        return (
-            React.createElement("p", null, "Hello gripan")
-        )
 
+        var rows = [];
+        for (var i=0; i < this.state.users.length; i++) {
+            rows.push(React.createElement("li", {key: this.state.users[i].email}, this.state.users[i].email));
+        }
+        return (React.createElement("ul", null, rows));
     }
 });
 
