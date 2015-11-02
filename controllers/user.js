@@ -6,6 +6,14 @@ var passport = require('passport');
 var User = require('../models/User');
 var secrets = require('../config/secrets');
 
+exports.getAll = function(req, res) {
+  User.find({}, function(err, users) {
+    if (err) return next(err);
+    return users;
+  });
+};
+
+
 /**
  * GET /login
  * Login page.

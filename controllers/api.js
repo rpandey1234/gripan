@@ -282,6 +282,12 @@ exports.getLastfm = function(req, res, next) {
   });
 };
 
+
+exports.getUsers = function(req, res, next) {
+  var User = require('User');
+
+};
+
 /**
  * GET /api/twitter
  * Twiter API example.
